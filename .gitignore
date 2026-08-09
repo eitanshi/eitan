@@ -1,0 +1,6 @@
+# Obsidian app config
+.obsidian/
+
+# Misc
+___*~
+*.swp
