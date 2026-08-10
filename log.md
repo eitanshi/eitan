@@ -162,3 +162,14 @@
 - **index.md 重排**：按五层+支持卡片分区；总页数 30
 - **graph.json**：五色分组（金=元卡/紫=框架/蓝=观点/橙=实证/灰=素材）
 - 根目录支持卡片不入层级；用户已将第二大脑设计原则、gbrain 集成、认知拓扑架构师(v1.0) 移至根目录
+
+## [2026-08-10] update | gbrain 集成打通（CLI 全链路）+ vault 迁移备份
+- **vault 迁移**：移动硬盘 → /root/brain/（cp 全量，SHA256 校验一致）；git 初提交 6be350f；远端 github.com/eitanshi/eitan（公开）；SSH key 认证（id_ed25519_guangqi）；每日 21:00 cron 自动 commit+push（backup_guangqi.sh）
+- **gbrain 升级**：0.42.72.1 → 0.42.75.0（bun update，GitHub 直连慢 ~10min）
+- **内容导入**：`gbrain sync --repo /root/brain` → 31 pages / 176 chunks；extract 126 links
+- **embed 修复**：embedding 只认环境变量（OPENAI_API_KEY + OPENAI_BASE_URL → SiliconFlow），config.json 的 provider_base_urls 不生效；固化 /root/.gbrain-env.sh
+- **chat 修复**：AI SDK languageModel() 默认走 Responses API（/v1/responses）→ SiliconFlow 404；改 gateway.ts 两处为 .chat()（Chat Completions）
+- **recipe 白名单**：openai.ts chat.models 追加 deepseek-ai/DeepSeek-V4-Flash
+- **think 绕过**：`gbrain config set models.think openai:deepseek-ai/DeepSeek-V4-Flash`，实测带引用回答
+- **autopilot 弃用**：PGLite 单写者锁与 CLI 冲突 → systemctl 停用，改 cron 03:00 sync+extract+embed（sync_guangqi_gbrain.sh）
+- **卡片更新**：gbrain-光启集成架构 从 seedling → growing，记录 6 个工程坑

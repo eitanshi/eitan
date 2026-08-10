@@ -48,4 +48,4 @@
 - [[工作流-四层工作法]] — 上下文召回→多维输入→苏格拉底→共识卡片→缘起溯源
 - [[认知拓扑架构师 (v1.0)]] — AI 角色系统提示词（核心公理/行为约束/Wiki-Node 输出协议/强制证伪）
 - [[第二大脑系统的设计原则]] — 第二大脑核心架构：对话推理→结构化沉淀→语义检索
-- [[gbrain-光启集成架构]] — PGLite + gbrain think 作为光启检索后端；保留 markdown 作真相源
+- [[gbrain-光启集成架构]] — ✅ CLI 全链路已通（sync/extract/embed/search/query/think）；cron 03:00 自动同步；PGLite + SiliconFlow 单端点
